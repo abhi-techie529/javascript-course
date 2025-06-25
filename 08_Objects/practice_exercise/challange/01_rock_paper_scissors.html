@@ -40,16 +40,30 @@
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
-        ">Reset</button>
+        localStorage.removeItem('score')              
+        ">Reset Score</button>
 
        <script>
 
-        const score = {
-            wins: 0 ,
-            losses: 0,
-            ties:0 
-        }
+        let score = JSON.parse(localStorage.getItem('score')) ||   {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };  
+        // syntax:- localStorage.getItem('key')   ,.parse:- it is used to convert the string into object
+        
+        /*
 
+        if( !score)     // !score     => true ; score === null   => true;
+        {
+            score = {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
+        }
+        
+        */
           function playGame(playerMove){
 
               const computerMove = pickComputerMove();           
@@ -106,6 +120,12 @@
         score.ties +=1;
 
     }
+
+    //*********localStorage *****************// syntax:-   localStorage.setItem('key','value');
+
+    localStorage.setItem('score',JSON.stringify(score));
+
+    // .stringify :- it is used to convert the object into string
 
 
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result} 
