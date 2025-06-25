@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Head Tail Game</title>
+     
+    </head>
+    <body>
+        
+    <button onclick="
+        playGame('heads')
+        ">Heads</button>
+
+    <button onclick="
+    playGame('tails')
+    ">Tails</button>
+
+     <button onclick="
+        score1.wins = 0;
+        score1.losses = 0;
+        localStorage.removeItem('score1')              
+        ">Reset Score</button>
+
+
+       <script>
+          // We can use const here since score is a reference
+      // so we can modify it even if it uses const.
+
+       const score1 =  JSON.parse(localStorage.getItem('score1')) || {
+            wins: 0,
+            losses: 0
+        };
+
+     function playGame(guess){
+       
+     const randomNumber = Math.random();
+     const result = randomNumber < 0.5 ? 'heads' :'tails';
+
+     console.log( guess === result ? 'you win' : 'you lose!');
+
+     if(guess === result){
+        score1.wins += 1;
+     }else {
+        score1.losses +=1;
+     }
+
+    console.log(score1);
+
+       localStorage.setItem('score1',JSON.stringify(score1))
+    
+     }
+
+    //  function resetScore(){
+    //     score1.wins = 0,
+    //     score1.losses = 0
+
+    //       localStorage.setItem('score1',JSON.stringify(score1))
+
+    //           console.log('Score reset:', score1);
+    //  }
+      </script>
+
+    </body>
+</html>
