@@ -1,0 +1,101 @@
+      <!--  * Issue = the calculation is inaccurate.
+       * Fix = calculate the number in cents and then
+       *       convert back to dollars at the end.
+    -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>DOM Projects</title>
+     
+    </head>
+    <body>
+
+        <p>YouTube Subscribe Button</p>
+        <button onclick="
+        subscribe();                  // here we call the function
+        " class="js-subscribe-button"> Subscribe  
+        </button>
+
+
+        <p>Amazon Shipping Calculator</p>
+
+        <p>Orders under $40 = +$10 shipping</p>
+
+        <p>Orders over $40 = FREE shipping. </p>
+
+        <input  placeholder="Cost of order" class="js-cost-input"
+        onkeydown=" handleCostKeydown(event) ">    
+        <!--onkeydown = press , The onkeydown event occurs when the user presses a key on the keyboard. -->
+
+        <button onclick="
+        calculateTotal();
+        ">Calcuale</button>
+
+        <p class="js-total-cost"></p>
+
+<script>
+
+
+// *********************** window object ****************//
+    // window.document
+    // window.console.log('window');
+    // window.alert
+
+
+    function handleCostKeydown(event){
+
+        if( event.key === 'Enter'){
+          calculateTotal();
+        } 
+    }
+
+          /*
+       * Issue = the calculation is inaccurate.
+       * Fix = calculate the number in cents and then
+       *       convert back to dollars at the end.
+       */
+
+
+    
+       function calculateTotal(){
+          const inputElement = document.querySelector('.js-cost-input');
+
+          
+        // Convert the numbers to cents by * 100.
+
+
+         let cost = Number(inputElement.value)*100;   // Number:- convert the string into number
+
+         if( cost < 4000){
+               cost = cost + 1000;
+    
+         }
+
+         document.querySelector('.js-total-cost').innerHTML = `$${cost / 100}`;
+       }
+
+
+         function subscribe(){
+
+         const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if( buttonElement.innerText === 'Subscribe'){
+            buttonElement.innerHTML = 'Subscribed'
+        } else {
+            buttonElement.innerHTML = 'Subscribe'
+        }
+    }
+
+      </script>
+     
+    </body>
+</html>
+
+
+
+<!-- output :-    $17.99 -->
+
+
+
