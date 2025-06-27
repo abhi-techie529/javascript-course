@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>DOM</title>
+     
+    </head>
+    <body>
+
+      <button>hello</button>
+     <button class="js-button">Second Button</button>
+
+       <script>
+    //********** Methods :- (i) document.querySelector ********//
+
+    console.log(document.querySelector('button').innerHTML);     // .querySelector got the buttom and put it inside the javaScriipt   , .innerHTML: here it help us to control the code inside the html .
+    
+    document.querySelector('button').innerHTML = 'Changed'    // by using this here the button value changed from ' hello ' to 'Changed'
+
+
+    // console.log(document.querySelector('.js-button'));    //HTML element are javaScript objects , and object have values and values have a variable to be stored so we declare variable not direct console,log it
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+    
+    
+/*
+
+    console.log(document.title);
+    document.title = 'Changed'    
+
+    console.log(document.body);      // this code is same as html body tag
+
+    console.log(document.body.innerHTML);    // the innerHTML controls the whole html inside the body thats why it called " innerHTML "
+
+*/
+
+    //************ replace the html wiht text *********//
+
+    // document.body.innerHTML = 'changed';      // this will replce the whole html inside the body with " changed "  (text)
+
+
+
+     //************ replace the html wiht code *********//
+
+        //   document.body.innerHTML = '<button>Good job! </button>';     // this will replace the html code  with this code " button "
+
+
+        //************** document object **************//
+     // the document object modle represents the webpageb   (DOM)
+
+
+    //   document.body.innerHTML = 'hello'
+    //   document.title = 'Good job!'
+
+
+
+    //********************************//
+
+
+      </script>
+     
+    </body>
+</html>
+
+
+
+
+
+
+
