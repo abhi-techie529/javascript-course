@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+    <title>Rock Paper Scissors </title>
+     
+  <link rel="stylesheet" href="02_rock_paper_scissor.css">
+    </head>
+    <body>
+
+        <p class="title">Rock Paper Scissors</p>
+         
+        <!-- if between 0 and 1/3 => Rock  -->
+        <!-- if between 1/3 and 2/3 => Paper  -->
+        <!-- if between 2/3 and 1 => Scissors  -->
+        <button onclick="
+
+      playGame('Rock');
+        " class="move-button">
+        <img src="images/rock-emoji.png" alt="rock" class="move-icon"></button>
+
+  <!-- ********************* Paper ****************************** -->
+
+        <button onclick="
+     playGame('Paper');
+        " class="move-button">
+        <img src="images/paper-emoji.png" alt="paper" class="move-icon"></button>
+
+    <!-- ****************** Scissors ********************-->
+
+        <button onclick="
+        //   console.log(pickComputerMove());
+                    // calling the function here
+         playGame('Scissors');
+        " class="move-button">
+
+        <img src="images/scissors-emoji.png" alt="scissor" class="move-icon">
+    
+    </button> 
+        
+        <p class="js-result result"></p>
+
+        <p class="js-move ">
+            You
+         <img src="images/rock-emoji.png" alt="rock" class="move-icon">
+          
+        <img src="images/scissors-emoji.png" alt="scissor" class="move-icon">
+        Computer
+        </p>
+
+        <p class="js-score score"></p>
+ 
+        <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score')       
+        updateScoreElement();    // here we call the function , and avoid duplicasy
+      
+        " class="reset-score-button">Reset Score</button>
+
+       <script src="02_rock_paper_scissor_project.js"> </script>
+     
+    </body>
+</html>
+
+
+
+
+
+
+
