@@ -17,45 +17,7 @@
 
         <div class="js-todo-list"></div>
 
-<script>
-         const todoList = [ "make dinner", "wash dishes" ];
-
-        renderTodoList();
-
-
-        function renderTodoList(){
-
-                    let todoListHTML = '';
-
-                for(let i = 0; i < todoList.length ; i++){
-                const todo = todoList[i];
-                const html = `<p>${todo}</p>`;
-                todoListHTML += html;
-                }
-                console.log(todoListHTML);
-        
-
-                document.querySelector('.js-todo-list').innerHTML = todoListHTML 
-
-        }
-
-
-
-         function addTodo(){
-            const inputElement = document.querySelector('.js-name-input');
-
-            const name = inputElement.value;     // to get the text out we use ( .value )
-            
-            todoList.push(name);
-            console.log(todoList);
-            
-            inputElement.value = '';     // this is used to reset the values of the text input after adding the value
-
-            renderTodoList();
-
-         }
-         
-</script>
+<script src="02_todo_list.js"> </script>
 
     </body>
 </html>
