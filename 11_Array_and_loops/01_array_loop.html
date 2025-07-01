@@ -101,28 +101,95 @@
 //**************************** Accumulator Pattern ***************************//
  // calculate the total //
 
-         const nums = [1 ,1 ,3]
-         let total = 0;                 // create a variable to store the result
+        //  const nums = [1 ,1 ,3]
+        //  let total = 0;                 // create a variable to store the result
      
-         for(let i = 0; i < nums.length ; i++){
-            const num = nums[i];
-            total += num ;               //update the result
-         }
+        //  for(let i = 0; i < nums.length ; i++){
+        //     const num = nums[i];
+        //     total += num ;               //update the result
+        //  }
 
-         console.log(total);          // output :- 5;
+        //  console.log(total);          // output :- 5;
 
  //************** another example *********************//    
      
-       const numsDoubled = [];
+//        const numsDoubled = [];
+
+//        for(let i = 0 ; i < nums.length ; i++){
+//         const num = nums[i];
+//         numsDoubled.push(num*2);
+//        }
+//        console.log(numsDoubled);
+       
+
+
+//********************** Arrays are References *****************//
+
+const array1 = [1,2,3];
+const array2 = array1.slice();     //.slice() :- make the copy of two arrays
+array2.push(4);
+
+console.log(array1);
+console.log(array2);
+
+// both have same output because they work as reference , to avoid this we use ( .slice ) property  , by using it we create a copy of array //
+ 
+//******************** shortcut:destructuring ***************//
+// get the first and second value out of this array
+
+const [firstValue,secondValue]= [1,2,3]
+ console.log(firstValue);     //output :- 1
+ console.log(secondValue);      //output :- 2
+ 
+ 
+//*********** Loops and therir feature like:- break continue ***//
+
+        for(let i = 0 ; i <= 10; i++){
+        if(i % 3 === 0){
+         continue;         // it will remove the element which is divisible by 3
+        }
+
+        // if(i === 3){
+        //         continue;    // 3 and after 3 it remove the elements
+        // }
+        console.log(i);
+        if(i === 8){
+         break;          // after 8 it will stop
+        }
+    }
+
+    //**************** in while loop use the incrememtn step manually due to use continue ************//
+
+    let i = 1;
+
+    while(i <=10 ){
+        if( i % 3 === 0 ){
+                i++;                       // need to add manuallly i++ // 
+                continue;     
+        }
+        console.log(i);
+        i++;
+    }
+     
+      function doubleArray(nums){
+        
+      const numsDoubled = [];
 
        for(let i = 0 ; i < nums.length ; i++){
         const num = nums[i];
+        if(num === 0){
+                return numsDoubled;     // return another way to break the loop
+        }
         numsDoubled.push(num*2);
        }
-       console.log(numsDoubled);
+       return numsDoubled;
+      }
+
+      console.log(doubleArray([1,1,3]));
+      console.log(doubleArray([2,2,5]));
+      
        
 
-     
      </script>
       
      
