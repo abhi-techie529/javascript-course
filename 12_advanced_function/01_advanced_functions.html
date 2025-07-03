@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Advanced Functions</title>
+
+    </head>
+    <body>
+      <script>
+
+    //    function greeting(){
+    //     console.log('hello');
+    //    }
+    //    greeting();
+
+
+
+
+
+       // *****we can also able to save a funciton into variable 
+
+/*
+
+       const num = 2;
+       const funciton1 = function(){
+        console.log('hello2');
+       };
+
+       console.log(funciton1);         // when we call the function then output is :- hello2
+       funciton1();
+       
+*/
+
+
+
+
+       // **************function save inside a object 
+
+/*
+
+       const object1 = {
+        num: 2,
+        fun: function() {
+          console.log('hello3');
+          
+        }
+       };
+       object1.fun();
+
+*/
+
+
+//************ passing a value into a function ***********//
+
+/*
+
+object1.fun();
+
+function display(param){
+    console.log(param);
+}
+display(2);
+
+*/
+
+
+//************ passing a function into a function ***********//
+
+/*
+        function run(param){
+        
+            param();
+        }
+        run( function(){
+
+            console.log('hello4');
+            
+        });    // the function which is calling in is called " callback function "
+
+*/
+
+
+
+
+//************************* setTimeout() ******************//
+
+/*
+
+setTimeout(function(){
+    console.log('timeout');       // synchronouscode and it run line by line
+    console.log('timeout2');        // synchronouscode
+    
+}, 3000 );
+
+ console.log('next time');
+
+ */
+ //Asynchronous:-  here 1st print "next time" & then print " timeout " because here we setout the time 3000(3 sec) so thats why its value are print  
+  
+ // Synchronous :- will wait for one line to finish before going to the next line
+// all the code which we simply write is synchronous code
+
+
+
+
+//********************** setInterval() ******************//
+// it keep runnig the function in future , if set time (3 second) then the function keep running in every 3 second
+
+/*
+
+setInterval(function() {
+    console.log('interval');
+}, 3000 );
+
+console.log('next time 2');
+
+*/
+
+
+
+
+//********************* another way to loop thorugh an array **********//
+
+   [
+    'make dinner',
+    'wash dishes',
+    'watch youtube'
+   ].forEach(function(value, index){
+    // in forEach loop the continue feature are work as 
+    if(value === 'wash dishes'){
+        return;                    // here return work as , continue;
+    }
+    console.log(index);
+    console.log(value);
+   })
+ 
+   //forEach() loop :- is preferred way to loop through an array and it is easy to read other than for loop
+
+
+
+</script>
+      
+     
+    </body>
+</html>
+
+
+
+
+
+
+
+ 
