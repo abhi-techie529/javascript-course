@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+    <title>Rock Paper Scissors </title>
+     
+  <link rel="stylesheet" href="01_Rock_paper_function.css">
+    </head>
+    <body>
+
+        <p class="title">Rock Paper Scissors</p>
+         
+        <!-- if between 0 and 1/3 => Rock  -->
+        <!-- if between 1/3 and 2/3 => Paper  -->
+        <!-- if between 2/3 and 1 => Scissors  -->
+
+        <button class="move-button js-rock-button">
+        <img src="images/rock-emoji.png" alt="rock" class="move-icon"></button>
+
+  <!-- ********************* Paper ****************************** -->
+
+        <button class="move-button js-paper-button">
+        <img src="images/paper-emoji.png" alt="paper" class="move-icon"></button>
+
+    <!-- ****************** Scissors ********************-->
+
+        <button class="move-button js-scissors-button">
+
+        <img src="images/scissors-emoji.png" alt="scissor" class="move-icon">
+    
+    </button> 
+        
+        <p class="js-result result"></p>
+
+        <p class="js-move ">
+            You
+         <img src="images/rock-emoji.png" alt="rock" class="move-icon">
+          
+        <img src="images/scissors-emoji.png" alt="scissor" class="move-icon">
+        Computer
+        </p>
+
+        <p class="js-score score"></p>
+ 
+        <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score')       
+        updateScoreElement();    // here we call the function , and avoid duplicasy
+      
+        " class="reset-score-button">Reset Score</button>
+
+        <button class="auto-play-button" onclick="
+        autoplay();
+        ">Auto play</button>
+
+       <script src="01_Rock_paper_function.js"> </script>
+     
+    </body>
+</html>
+
+
+ 
+
+
+
+

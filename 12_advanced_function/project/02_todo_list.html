@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>todo list</title>
+    <style>
+        body{
+             font-family: Arial;
+        }
+        .todo-grid,.todo-input-grid{
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            column-gap: 10px;
+            row-gap: 10px;
+            align-items: center;
+        }
+        .todo-input-grid{
+            margin-bottom: 10px;
+            align-items: stretch;
+        }
+        .name-input,.due-date-input{
+            font-size:15px;
+            padding: 6px;
+        }
+        .add-todo-button{
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .delete-todo-button{
+            background-color: maroon;
+            color: white;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+    </style>
+    </head>
+    <body>
+              <p> Todo List </p>
+ 
+         <div class="todo-input-grid">
+                  
+                <input placeholder="Todo name" class="js-name-input name-input">
+
+                <input type="date" class="js-duedate-input due-date-input">
+
+                <button class="add-todo-button js-add-todo-button">Add</button>
+
+         </div>
+
+
+        <div class="js-todo-list todo-grid"></div>
+
+<script src="02_todo_list.js"></script>
+
+    </body>
+</html>
+
+ 
