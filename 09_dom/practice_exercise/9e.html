@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Problem 5</title>
+     
+    </head>
+    <body>
+
+
+    <input placeholder="Type your name" class="js-name" onkeydown="enterClick(event)">
+
+      <button onclick="
+       let ourName = document.querySelector('.js-name');
+    document.querySelector('.js-name-input')
+    .innerHTML= `Your name is: ${ourName.value}`;
+      ">Submit</button>
+    
+<p class="js-name-input"></p>
+
+ <script>
+
+
+function enterClick (event){
+    if ( event.key === 'Enter'){
+         let ourName = document.querySelector('.js-name');
+    document.querySelector('.js-name-input')
+    .innerHTML= `Your name is: ${ourName.value}`;
+    }
+}
+ </script>
+    </body>
+</html>
+
