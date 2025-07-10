@@ -1,0 +1,39 @@
+<!-- create a loop that takes an array of numbers and create a new array where each number is increased by 1  .  
+ [1,2,3] => [2,3,4] -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>peoblem 7</title>
+    </head>
+    <body>
+        
+<script>
+
+    const nums = [1,2,3];
+       
+    let total = 0 ;            // create a variable to store the result
+
+    for(let i = 0 ; i <= nums.length ; i++){
+       
+        const num = nums[i]
+         total += num                   //update the result
+    }
+
+    console.log(total);
+
+    const numsDoubled = [];
+
+    for(let i = 0; i < nums.length ; i++){
+        const num = nums[i]
+        numsDoubled.push(num + 1);
+    }
+    console.log(numsDoubled);
+    
+    
+
+</script>
+
+    </body>
+</html>
