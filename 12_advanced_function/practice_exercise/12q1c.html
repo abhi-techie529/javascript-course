@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 19</title>
+    </head>
+    <body>
+
+
+        <button class="js-button">Start</button>
+
+        <script>
+
+        
+         document.querySelector('.js-button')
+         .addEventListener('click' , () => {
+             const button = document.querySelector('.js-button');
+             
+             // The function below was changed
+          // to an arrow function.
+            button.innerHTML = 'Loading...'
+             setTimeout(() => {
+                button.innerHTML = 'Finished!';
+             },1000)
+         });
+
+        </script>
+    </body>
+</html>

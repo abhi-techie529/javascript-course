@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 16</title>
+    </head>
+    <body>
+
+
+        <button class="js-button" >Start</button>
+
+        <script>
+
+        document.querySelector('.js-button')
+        .addEventListener('click', () => {
+           
+            const button = document.querySelector('.js-button');
+
+             setTimeout(() => {
+                button.innerHTML = 'Finished!';
+             },1000)                // using arrow function
+        })
+
+            
+        </script>
+    </body>
+</html>

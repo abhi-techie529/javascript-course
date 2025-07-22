@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 15</title>
+    </head>
+    <body>
+
+
+        <button class="js-button" onclick="
+            updateButton()
+            ">Start</button>
+
+        <script>
+
+
+         function updateButton(){
+            const button = document.querySelector('.js-button');
+            
+            button.innerHTML = 'Loading...'
+             setTimeout(() => {
+                button.innerHTML = 'Finished!';
+             },1000)                      // using arrow function
+         }
+
+            
+        </script>
+    </body>
+</html>
