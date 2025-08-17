@@ -4,6 +4,6 @@
   See 12r.js for the full code.
 */
 document.querySelector('.js-auto-play-button')
-  .addEventListener('click', () => {
+  .addEventListener('click',  () => {
     autoPlay();
   });
