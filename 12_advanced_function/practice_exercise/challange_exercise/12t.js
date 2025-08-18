@@ -1,4 +1,4 @@
-// See 12r.js for the full code.
+// See 12r.js for the full code .
 function autoPlay() {
   if (!isAutoPlaying) {
     intervalId = setInterval(() => {
