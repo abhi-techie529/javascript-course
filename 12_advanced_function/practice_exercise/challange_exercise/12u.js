@@ -1,4 +1,4 @@
-// See 12r.js for the full code.
+// See 12r.js for the full code .
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'r') {
     playGame('rock');
