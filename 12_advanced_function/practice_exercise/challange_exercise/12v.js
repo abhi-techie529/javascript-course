@@ -10,7 +10,7 @@ function resetScore() {
 }
 
 // Add an event listener for the reset score
-// button using .addEventListener
+//  button using .addEventListener
 document.querySelector('.js-reset-score-button')
   .addEventListener('click', () => {
     resetScore();
