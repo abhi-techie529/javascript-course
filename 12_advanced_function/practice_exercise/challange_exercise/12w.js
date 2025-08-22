@@ -10,7 +10,7 @@ document.body.addEventListener('keydown', (event) => {
     autoPlay();
   
   // Add an if-statement condition to
-  // check if 'Backspace' was pressed.
+  // check if 'Backspace' was  pressed.
   } else if (event.key === 'Backspace') {
     resetScore();
   }
