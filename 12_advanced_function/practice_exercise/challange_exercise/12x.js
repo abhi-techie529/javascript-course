@@ -56,7 +56,7 @@ function showResetConfirmation() {
 }
 
 // A helper function (it helps us reuse the
-// code for hiding the confirmation message).
+// code for hiding the confirmation message) .
 function hideResetConfirmation() {
   document.querySelector('.js-reset-confirmation')
     .innerHTML = '';
