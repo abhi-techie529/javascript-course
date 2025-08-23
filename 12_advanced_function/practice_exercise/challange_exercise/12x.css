@@ -3,7 +3,7 @@
 .auto-play-button,
 /*
   Reuse the style for the reset-score-button
-  by using a comma in the selector.
+  by using a comma in the selector .
 */
 .reset-confirm-button {
   background-color: white;
