@@ -38,7 +38,7 @@
                     renderTodoList();      
               });
              });
-                  // .querySelectorAll :- it will give us all the element
+                  //  .querySelectorAll :- it will give us all the element
 
 
 
