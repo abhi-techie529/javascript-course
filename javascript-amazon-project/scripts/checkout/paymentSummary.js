@@ -20,7 +20,13 @@ export function renderPaymentSummary(){
         const taxCents = TotalBeforeTaxCents * 0.1;
         const totalCents = TotalBeforeTaxCents  + taxCents;
         
-        
+        let cartQuantity = 0;
+
+        cart.forEach((cartItem) => {
+          cartQuantity += cartItem.quantity;
+        });
+
+
         const paymentSummaryHTML = `
 
              <div class="payment-summary-title">
@@ -28,7 +34,7 @@ export function renderPaymentSummary(){
           </div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${cartQuantity}):</div>
             <div class="payment-summary-money">$${formatCurrency(productPriceCents)}
             </div>
           </div>
@@ -40,7 +46,7 @@ export function renderPaymentSummary(){
 
           <div class="payment-summary-row subtotal-row">
                 <div>Total before tax: </div>
-                <div> class = "payment-summary-money">$${formatCurrency(TotalBeforeTaxCents)}</div>
+                <div class ="payment-summary-money">$${formatCurrency(TotalBeforeTaxCents)}</div>
           </div>
     
           <div class="payment-summary-row">
