@@ -16,8 +16,6 @@ else{
     
 }
 
-
-
 console.log('works with 0');
 
 if(formatCurrency(0) === '0.00'){
