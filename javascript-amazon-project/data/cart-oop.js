@@ -1,5 +1,3 @@
-  import {validDeliveryOption} from './deliveryOptions.js';
-
   function Cart(localStorageKey){
 
     const cart = {
@@ -73,7 +71,7 @@
             calculateCartQuantity(){
                     let cartQuantity = 0;
 
-                    this.cartItems.forEach((cartItem) => {
+                    cart.forEach((cartItem) => {
                         cartQuantity += cartItem.quantity;
                     });
 
@@ -83,7 +81,7 @@
                 updateQuantity(productId, newQuantity) {
             let matchingItem;
 
-            this.cartItems.forEach((cartItem) => {
+            cart.forEach((cartItem) => {
                 if (productId === cartItem.productId) {
                 matchingItem = cartItem;
                 }
