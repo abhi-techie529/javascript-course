@@ -1,12 +1,18 @@
+  //***********8 Creating a Class ****************//
+
   import {validDeliveryOption} from './deliveryOptions.js';
 
-  function Cart(localStorageKey){
+  class Cart {
+           cartItems;   
+           localStorageKey;
 
-    const cart = {
-        cartItems: undefined,
+           constructor(localStoragekey){
+                 this.localStorageKey = localStoragekey;
+                 this.loadFromStorage();
+           }
 
-        loadFromStorage(){
-                this.cartItems = JSON.parse(localStorage.getItem(localStorageKey));   // this means: The object that called this method //
+            loadFromStorage(){
+                this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
 
             if(!this.cartItems){
 
@@ -22,14 +28,15 @@
                     deliveryOptionId:'2'
                 }];
             }
-        },
-        
-        saveToStorage(){
-            localStorage.setItem(localStorageKey,JSON.stringify(this.cartItems));
-        },
+        }
 
         
-        addToCart(productId, quantity = 1){
+        saveToStorage(){
+            localStorage.setItem(this.localStorageKey,JSON.stringify(this.cartItems));
+        }
+
+
+         addToCart(productId, quantity = 1){
 
             
                     let matchingItem;
@@ -52,9 +59,9 @@
 
                         this.saveToStorage();
 
-            },
-        
-            
+            }
+
+                
         removeFromCart(productId){
             const newCart = [];
 
@@ -67,7 +74,7 @@
             this.cartItems = newCart;
 
             this.saveToStorage();
-        },
+        }
         
                 
             calculateCartQuantity(){
@@ -78,7 +85,7 @@
                     });
 
                     return cartQuantity;
-                },
+        }
 
                 updateQuantity(productId, newQuantity) {
             let matchingItem;
@@ -92,7 +99,7 @@
             matchingItem.quantity = newQuantity;
 
             this.saveToStorage();
-        },
+        }
 
 
 
@@ -119,21 +126,15 @@
 
             this.saveToStorage();
         }
-    };
-
-    return cart;
   }
+  
 
-    const cart = Cart('cart-oop');
-    const businesCart = Cart('cart-business');
-
-    cart.loadFromStorage();
-    
-
-    businesCart.loadFromStorage();
+    const cart = new Cart('cart-oop');        // new : this generate a new object using our class
+    const businesCart = new Cart('cart-business');
     
     console.log(cart);
     console.log(businesCart);
+    console.log(businesCart instanceof Cart);
     
     
 
