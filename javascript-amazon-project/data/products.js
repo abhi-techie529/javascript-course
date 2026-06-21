@@ -35,7 +35,33 @@ export function getProduct(productId){
       getPrice(){
         return ` $${formatCurrency(this.priceCents)} `;
       }
+
+      extraInfoHTML(){
+        return ''; 
+      }
+
   }
+
+  //************* Inheritance ************//
+
+   class Clothing extends Product{
+        sizeChartLink;
+
+        constructor(productDetails){
+            super(productDetails);
+            this.sizeChartLink = productDetails.sizeChartLink;
+        }
+
+        extraInfoHTML(){
+          return`
+          <a href="${this.sizeChartLink}" target="_blank">
+            Size chart
+          </a>
+          `;
+        }
+
+   }
+
 
 
 export const products = [
@@ -716,6 +742,9 @@ export const products = [
     priceCents:6000
   }
 ].map((productDetails) => {
+     if (productDetails.type === 'clothing') {
+       return new Clothing(productDetails);
+     }
      return new Product(productDetails);
 });  
 
