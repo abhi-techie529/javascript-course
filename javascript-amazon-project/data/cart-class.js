@@ -129,7 +129,7 @@
   }
   
 
-    const cart = new Cart('cart-oop');        // new : this generate a new object using our class
+   export const cart = new Cart('cart-oop');        // new : this generate a new object using our class
     const businesCart = new Cart('cart-business');
     
     console.log(cart);
