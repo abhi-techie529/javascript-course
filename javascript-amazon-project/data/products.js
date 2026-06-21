@@ -61,7 +61,37 @@ export function getProduct(productId){
         }
 
    }
+    /*
+        const date = new Date();
+        console.log(date);
+        console.log(date.toLocaleTimeString());
+    */ 
 
+    /*
+    console.log(this);
+    const object2 = {
+      a: 2,
+      b: this.a
+    };
+    */
+
+
+
+    //********************** Summary of (.this)  **************//
+
+        function logThis(){
+          console.log(this);
+        }
+        logThis();
+        logThis.call('hello');
+
+
+        const object3 = {
+          method: () => {
+            console.log(this);  
+          }
+        };
+        object3.method();
 
 
 export const products = [
