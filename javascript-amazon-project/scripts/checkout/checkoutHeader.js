@@ -1,11 +1,7 @@
-import {cart} from '../../data/cart-class.js';
+import {calculateCartQuantity} from '../../data/cart.js';
 
 export function renderCheckoutHeader() {
-  let cartQuantity = 0;
-
-  cart.cartItems.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
+  const cartQuantity = calculateCartQuantity();
   
   const checkoutHeaderHTML = `
     <div class="header-content">
