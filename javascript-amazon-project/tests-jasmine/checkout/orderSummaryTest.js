@@ -15,7 +15,8 @@ describe('test suite: renderOrderSummary',() => {
 
 beforeEach(() =>{
                         
-        document.querySelector('.js-test-container').innerHTML = `  
+        document.querySelector('.js-test-container').innerHTML = 
+        `  
             <div class="js-order-summary"></div>
             <div class="js-payment-summary"></div>
             <div class="js-checkout-header"></div>
