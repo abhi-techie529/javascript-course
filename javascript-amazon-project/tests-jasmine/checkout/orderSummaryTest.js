@@ -9,7 +9,7 @@ describe('test suite: renderOrderSummary',() => {
 
     beforeAll((done) => {
         loadProducts(done);
-    })
+    }) 
 
 beforeEach(() =>{
                         

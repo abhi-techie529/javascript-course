@@ -2,11 +2,64 @@ import { renderCheckoutHeader } from "./checkout/checkoutHeader.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 import {loadProducts} from '../data/products.js';
+import { loadCart } from "../data/cart.js";
 // import '../data/backend-practice.js';
 
 
-loadProducts(() => {
-    renderCheckoutHeader();
-    renderOrderSummary();
-    renderPaymentSummary();
-})
+//****************** Promise.all :- it is used to run multiple promises at the same time*******//
+
+Promise.all([
+    new Promise((resolve) => {
+        loadProducts(() => {         
+            resolve('abhi');
+        });
+    }),
+    new Promise((resolve) => {
+            loadCart(() => {
+                resolve();
+        });
+    })
+
+]),then((value) => {
+        console.log(value);
+        
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+});
+
+//**************** Promise Feature *****************//
+
+/*
+    new Promise((resolve) => {
+        loadProducts(() => {         
+            resolve('abhi');
+        });
+
+    }).then((value) => {    
+        console.log(value);
+        
+        
+        return new Promise((resolve) => {
+            loadCart(() => {
+                resolve();
+            });
+        });
+
+    }).then(() => {     
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();      
+    })
+*/
+
+ /*   
+    loadProducts(() => {
+        loadCart(() => {
+             renderCheckoutHeader();
+            renderOrderSummary();
+            renderPaymentSummary();
+        });
+       
+    })
+  */ 
