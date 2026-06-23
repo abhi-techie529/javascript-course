@@ -1,7 +1,7 @@
 import { renderCheckoutHeader } from "./checkout/checkoutHeader.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import {loadProducts} from '../data/products.js';
+import {loadProducts,loadProductsFetch} from '../data/products.js';
 import { loadCart } from "../data/cart.js";
 // import '../data/backend-practice.js';
 
@@ -9,18 +9,14 @@ import { loadCart } from "../data/cart.js";
 //****************** Promise.all :- it is used to run multiple promises at the same time*******//
 
 Promise.all([
-    new Promise((resolve) => {
-        loadProducts(() => {         
-            resolve('abhi');
-        });
-    }),
+   loadProductsFetch(),
     new Promise((resolve) => {
             loadCart(() => {
                 resolve();
         });
     })
 
-]),then((value) => {
+]).then((value) => {
         console.log(value);
         
         renderCheckoutHeader();
