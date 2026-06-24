@@ -141,3 +141,18 @@ export function updateDeliveryOption(productId,deliveryOptionId){
         xhr.open('GET','https://supersimplebackend.dev/cart');
         xhr.send();
      }
+
+
+     export async function laodCartFetch() {
+        const response = await fetch('https://supersimplebackend.dev/cart');
+        const text = await response.text();
+        console.log(text);
+        return text;
+     }
+
+
+// Extra feature: make the cart empty after creating an order.
+export function resetCart() {
+  cart = [];
+  saveToStorage();
+}

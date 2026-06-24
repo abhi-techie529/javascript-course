@@ -19,6 +19,7 @@ export function getProduct(productId){
       name;
       rating;
       priceCents;
+      keywords;
 
       constructor(productDetails){
         this.id = productDetails.id;
@@ -26,6 +27,7 @@ export function getProduct(productId){
         this.name = productDetails.name;
         this.rating = productDetails.rating;
         this.priceCents = productDetails.priceCents;
+        this.keywords = productDetails.keywords;
       }
 
       getStarsUrl(){
@@ -89,7 +91,7 @@ export function getProduct(productId){
 
   export function loadProductsFetch(){
      const promise = fetch(
-      'https://supersimplebackend.dev/products'
+      'backend/products.json'
       ).then((response) => {
           return response.json(); 
       }).then((productsData) => {
@@ -103,9 +105,9 @@ export function getProduct(productId){
             return new Product(productDetails);
             }); 
             
-            console.log('load products');
+            console.log('products loaded from local file');
       }).catch((error) => {
-         console.log('Unexpected error. please try again later.');
+         console.log('Unexpected error loading products:', error);
       });
 
       return promise;
